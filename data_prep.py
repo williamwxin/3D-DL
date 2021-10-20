@@ -50,7 +50,7 @@ def points_to_box(data_training, box_width, stack_points=False, shuffle=False):
 
     return np.array(out_x), np.array(raw_y), np.array(labels)
 
-def points_to_scale_ordered(data_training, shuffle=False):
+def points_to_scale_ordered(data_training, box_width, shuffle=False):
     dataloader = DataLoader(data_training, batch_size=1, shuffle=shuffle)
 
     out_x, raw_y = [], []
@@ -76,6 +76,7 @@ def points_to_scale_ordered(data_training, shuffle=False):
             print('Progress: ', i)
 
     return np.array(out_x), np.array(raw_y), np.array(labels)
+
 
 
 
