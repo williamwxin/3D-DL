@@ -1,0 +1,13 @@
+1. Install torch geometric
+
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.0+${CUDA}.html
+pip install torch-sparse -f https://data.pyg.org/whl/torch-1.10.0+${CUDA}.html
+pip install torch-geometric
+
+where ${CUDA} is your pytorch version (torch.version.cuda), ie cpu, cu102, cu113
+
+2. Download Modelnet10 data from here: https://modelnet.cs.princeton.edu/#
+
+3. Extract zip file into directory, and rename the "ModelNet10" folder to "raw"
+
+4. Run https://github.com/williamwxin/3D-DL/blob/main/data_prep.py
