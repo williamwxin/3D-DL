@@ -88,8 +88,8 @@ box, box_y, labels = points_to_box(data_training, box_width, stack_points=True, 
 box_test, box_test_y, _ = points_to_box(data_testing, box_width, stack_points=True, shuffle=True)
 
 
-dataset_train = TensorDataset(torch.Tensor(box), torch.Tensor(box_y))
-dataset_test = TensorDataset(torch.Tensor(box_test), torch.Tensor(box_test_y))
+dataset_train = TensorDataset(torch.Tensor(box), torch.LongTensor(box_y))
+dataset_test = TensorDataset(torch.Tensor(box_test), torch.LongTensor(box_test_y))
 
 train_loader = DataLoader(dataset_train, batch_size=128, shuffle=True, num_workers=0)
 test_loader = DataLoader(dataset_test, batch_size=128, shuffle=True, num_workers=0)
